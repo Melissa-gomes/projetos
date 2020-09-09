@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        //ex1
+    let tag =document.createElement("h1");
+    tag.innerText="Exercício 5.2 - JavaScript DOM";
+    document.body.appendChild(tag);
+    //ex2
+    let div= document.createElement("div");
+    div.className = "main-content";
+    document.body.appendChild(div);
+    //ex3
+    let outraDiv= document.createElement("div");
+    outraDiv.className = "center-content";
+    let final = document.querySelector(".main-content");
+    final.appendChild(outraDiv);
+    //ex4
+    let paragrafo = document.createElement("p");
+    let local= document.querySelector(".center-content");
+    local.appendChild(paragrafo);
+    //ex5
+    let maisUmaDiv= document.createElement("div");
+    maisUmaDiv.className = "left-content";
+    let nov = document.querySelector(".main-content");
+    nov.appendChild(maisUmaDiv);
+    //ex6
+    let divDaDiv= document.createElement("div");
+    divDaDiv.className = "right-content";
+    let ver = document.querySelector(".main-content");
+    ver.appendChild(divDaDiv);
+    //ex7
+    let lugar = document.querySelector(".left-content");
+    let imagem =document.createElement("img");
+    imagem.className = "small-image";
+    imagem.src = "https://picsum.photos/200";
+    lugar.appendChild(imagem);
+    //ex 8
+   /*let lista = ["um", "dois","tres","quatro", "cinco", "seis","sete","oito","nove","dez"];
+    let estacao = document.querySelector(".right-content");
+        for(let i = 0; i < lista.length; i +=1){
+            let indice = lista[i];
+            let criandoLista= document.createElement("ul");
+           let res= criandoLista.innerHTML = indice;
+           estacao.appendChild(res);
+        } */
+    //ex 9
+    let tag1 =document.createElement("h3");
+    let tag2 =document.createElement("h3");
+    let tag3 =document.createElement("h3");
+    let filha = document.querySelector(".main-content");
+    filha.appendChild(tag1);
+    filha.appendChild(tag2);
+    filha.appendChild(tag3);
+    </script>
+  </body>
+</html>
