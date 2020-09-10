@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = utf-8 />
+<title> Calculadora </title>
+</head>
+<body>
+
+  <label> Quadrar este número:
+    <input type = "number" id = "square-input" size = "2">
+  </label>
+  <button id = "square-button"> Calcular </button>
+  <br> <br>
+  
+  <label> Metade deste número:
+    <input type = "number" id = "half-input" size = "2">
+  </label>
+  <button id = "half-button"> Calcular </button>
+  <br> <br>
+  
+  <label>
+    Fração:
+    <input type = "number" id = "percent1-input" size = "2">
+  </label>
+  <label>
+    Todo:
+    <input type = "number" id = "percent2-input" size = "2">
+  </label>
+  <button id = "percent-button"> Calcular </button>
+  <br> <br>
+  
+  <label> Calcule a área do círculo com o raio:
+    <input type = "number" id = "area-input" size = "2">
+  </label>
+  <button id = "area-button"> Calcular </button> 
+  <br> <br>
+  <div id = "solution"> </div>
+<script>
+    let botao1 = document.querySelector("#square-button");
+    let botao2 = document.querySelector("#half-button");
+    let botao3 = document.querySelector("#percent-button");
+    let botao4 = document.querySelector("#area-button");
+    function squareNumber(num) {
+    var squaredNumber = num * num;
+    console.log('The result of squaring the number ' + num + ' is ' + squaredNumber);
+    return squaredNumber;
+}
+
+squareNumber(3);
+
+function halfOf(num) {
+    var half = num / 2;
+    console.log('Half of ' + num + ' is ' +  half);
+    return half;
+}
+
+halfOf(5);
+
+function percentOf(num1, num2) {
+    var percent = (num1/num2) * 100;
+    console.log(num1 + ' is ' + percent + '% of ' + num2);
+    return percent;
+}
+
+percentOf(5, 10);
+
+function areaOfCircle(radius) {
+    var area = Math.PI * squareNumber(radius);
+    console.log('The area of circle with radius ' + radius + ' is ' + area);
+    return area;
+}
+
+areaOfCircle(2);
+
+function doCrazyStuff(num) {
+    var half    = halfOf(num);
+    var squared = squareNumber(half);
+    var area    = areaOfCircle(squared);
+    var result  = percentOf(squared, area);
+}
+
+doCrazyStuff(5);
+botao1.addEventListener("click", squareNumber);
+botao2.addEventListener("click", halfOf);
+botao3.addEventListener("click", percentOf);
+botao4.addEventListener("click", areaOfCircle);
+</script>
+  
+</body>
+</html>
